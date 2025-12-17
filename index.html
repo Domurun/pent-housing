@@ -737,8 +737,8 @@
 
                 try {
                     // 3. Send to Backend
-                    // NOTE: This fetch call will likely fail without a local server running on http://localhost:3000/send-email
-                    const response = await fetch('http://localhost:3000/send-email', {
+                    // We use a relative path. Vercel automatically routes /api requests to the api folder
+const response = await fetch('/api/send-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
